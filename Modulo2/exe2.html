@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <button onclick="exibeDiv()">Me pressione</button>   
+        </div>
+
+        <div id="showBox">
+
+        </div>
+
+        <script>
+
+            var color;
+
+            function exibeDiv() {                    
+
+                var createDiv = document.createElement('div');
+                color = getRandomColor();
+
+                createDiv.setAttribute('id', 'box');
+                createDiv.setAttribute('style','width: 100px; height: 100px; background-color: '+ color +';');
+                createDiv.setAttribute('onmouseover','mudaCor()');
+                console.log(createDiv);
+
+                var containerElement = document.querySelector('#showBox');
+                containerElement.appendChild(createDiv);
+
+            }
+
+            function mudaCor(){
+                
+                var alterDiv = document.querySelectorAll('div#box')[1];
+                
+                alterDiv.setAttribute('style','width: 100px; height: 100px; background-color: '+getRandomColor() +';');
+
+            }
+
+            function getRandomColor() {
+
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+
+                return color;
+            }
+
+        </script>
+
+    </body>
+</html>

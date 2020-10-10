@@ -1,0 +1,32 @@
+<html>
+<body>
+
+    <script>
+
+        function escreve(usuarios) {
+
+            for(const element of usuarios) {
+                console.log("O " + element.nome + 
+                " possui as habilidades: " + element.habilidades);
+            }
+            
+
+        }
+
+        var usuarios = [
+        {
+            nome: "Diego",
+            habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+            nome: "Gabriel",
+            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        escreve(usuarios);
+
+    </script>
+
+</body>
+</html>
